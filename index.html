@@ -1,13 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skyline</title>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-    <p>This a vite vanilla JS app.</p>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+    <!--Custom font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+     <!--Remix Icon cdn link-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <p class="logo">
+                <span>Skyline</span>
+            </p>
+
+            <button class="nav-toggler">
+                <i class="ri-menu-line"></i>
+            </button>
+
+            <nav>
+                <input type="text" class="search-input" id="search-input" placeholder="Search city">
+                <button class="celsius" id="celsius">°C</button>
+                <button class="fahrenheit" id="fahrenheit">°F</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="details">
+            <img src="media/icon.png" alt="cloudy weather" class="weather-icon">
+            <p class="temperature" id="temperature">28<sup>°C</sup></p>
+            <p class="description">
+                <i class="ri-heavy-showers-line"></i>
+                <span id="description">Rainy Storm Clouds</span>
+            </p>
+            <p class="location">
+                <i class="ri-map-pin-line"></i>
+                <span id="location">Port Harcourt, Nigeria</span>
+            </p>
+            <p class="date">
+                <i class="ri-calendar-2-line"></i>
+                <span id="date"></span>
+                <span class="time" id="time"></span>
+            </p>
+        </section>
+
+        <section class="prediction">
+            <h3>Weather Prediction</h3>
+            <div class="cloud">
+                <p>Cloudiness</p>
+                <p>How cloudy is the day: 100%</p>
+            </div>
+            <div>
+                <div class="max-temp">
+                    <p>Max Temp</p>
+                    <p class="deg">300.05°C</p>
+                </div>
+                <div class="min-temp">
+                    <p>Min Temp</p>
+                    <p class="deg">297.56°C</p>
+                </div>
+                <div class="feels-like">
+                    <p>Feels Like</p>
+                    <p class="deg">298.74°C</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="forecast">
+            <div class="heading">
+                <h3>Forecast</h3>
+                <p>3 days</p>
+            </div>
+            <div class="weather-forecast">
+                <img src="media/icon.png" alt="">
+                <p class="forecast-temperature">29°C</p>
+                <p class="day" id="forecast-date">25 July</p>
+                <p class="day" id="day">Tuesday</p>
+            </div>
+            <div class="weather-forecast">
+                <img src="media/icon.png" alt="">
+                <p class="forecast-temperature">21°C</p>
+                <p class="day" id="forecast-date">26 July</p>
+                <p class="day" id="day">Wednesday</p>
+            </div>
+            <div class="weather-forecast">
+                <img src="media/icon.png" alt="">
+                <p class="forecast-temperature">24°C</p>
+                <p class="day" id="forecast-date">27 July</p>
+                <p class="day" id="day">Thursday</p>
+            </div>
+            <div class="weather-forecast">
+                <img src="media/icon.png" alt="">
+                <p class="forecast-temperature">30°C</p>
+                <p class="day" id="forecast-date">28 July</p>
+                <p class="day" id="day">Friday</p>
+            </div>
+        </section>
+        <section class="overview">
+            <div class="wind">
+                <div class="left">
+                    <span>Wind Status</span>
+                    <p>7.70 <span class="metric">km/h</span></p>
+                </div>
+                <div class="right"></div>
+            </div>
+            <div class="visibility">
+                <div class="left">
+                    <span>Visibility</span>
+                    <p>10.0 <span class="metric">km</span></p>
+                </div>
+                <div class="right"></div>
+            </div>
+            <div class="humidity">
+                <div class="left">
+                    <span>Humidity</span>
+                    <p>64 <span class="metric">%</span></p>
+                </div>
+                <div class="right"></div>
+            </div>
+            <div class="pressure">
+                <div class="left">
+                    <span>Pressure</span>
+                    <p>1015 <span class="metric">mb</span></p>
+                </div>
+                <div class="right"></div>
+            </div>
+            <div class="sunrise">
+                <div class="left">
+                    <span>Sunrise</span>
+                    <p>5:32 <span class="metric">am</span></p>
+                </div>
+                <div class="right"></div>
+            </div>
+            <div class="sunset">
+                <div class="left">
+                    <span>Sunset</span>
+                    <p>8:44 <span class="metric">pm</span></p>
+                </div>
+                <div class="right"></div>
+            </div>
+        </section>
+        <section class="picture">
+            <img src="" alt="">
+        </section>
+    </main>
+</body>
 </html>
