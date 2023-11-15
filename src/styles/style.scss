@@ -1,4 +1,388 @@
+$primary-font-color: #e3e3e3;
+$sec-font-color:  #94a3b8;
+$heading-color: #f7f7f7;
+$background-color: #113f67;
+$accent-color: #38598b;
+$font-family: 'Roboto', sans-serif;
+$border-radius: 10px;
+
+$font-size: (
+  "small": .7rem,
+  "medium": .9rem,
+  "large": 1.1rem,
+  "icon-small": 1.3rem,
+  "icon-medium": 1.5rem,
+  "xl": 2rem,
+  "xxl": 3rem,
+);
+
+@mixin background() {
+  background: rgba( 255, 255, 255, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 1px );
+  -webkit-backdrop-filter: blur( 1px );
+  border-radius: $border-radius;
+  padding: 1em;
+}
+
+@mixin button() {
+  background-color: $background-color;
+  color: $primary-font-color;
+  border: none;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+%toggler {
+  background-color: $background-color;
+  border-radius: 15px;
+}
+
+%container {
+  width: 85%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+@mixin image-width() {
+  width: 100%;
+  max-width: 600px;
+  object-fit: cover;
+  border-radius: $border-radius;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: black;
-  color: aquamarine;
+  background: url("../../public/background.jpg") center center/cover no-repeat;
+  color: $primary-font-color;
+  font-family: $font-family;
+}
+
+// header
+.header {
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 9px );
+  -webkit-backdrop-filter: blur( 9px );
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.wrapper {
+  @extend %container;
+  padding-block: .7em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.logo {
+  font-size: map-get($font-size , "icon-medium");
+  font-weight: 700;
+  color: $heading-color;
+  display: flex;
+  gap: .3em;
+}
+.nav-toggler {
+  @include button;
+  border-radius: 5px;
+  padding: .5em .7em;
+}
+.navbar, .picture {display: none}
+.navbar--visible{
+  display: flex;
+  align-items: center;
+  gap: .7em;
+}
+.search-form {
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  background-color: $primary-font-color;
+  border-radius: $border-radius;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  margin-block: .3em;
+}
+.search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 500;
+}
+.search-btn {
+  @include button;
+  border-radius: 50%;
+  padding: .5em;
+}
+.toggle {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  background-color: $primary-font-color;
+  padding-block: .1em;
+  padding-inline: .3em .6em;
+  border-radius: 20px;
+}
+.celsius {
+  @extend %toggler;
+  padding: .3em .6em;
+}
+.fahrenheit {
+  color: $background-color;
+  padding-inline-start: .3em;
+}
+
+.main {
+  @extend %container;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  gap: 2em;
+  padding-block-start: 5em;
+}
+
+// Details
+.details {
+  @include background;
+  i{ 
+    font-size: map-get($font-size, "icon-small"); 
+    color: $sec-font-color;
+  }
+}
+.weather-icon {
+  padding-block: .5em;
+}
+.temperature {
+  font-size: map-get($font-size , "xxl");
+  font-weight: 400;
+  display: flex;
+  align-items: flex-start
+  sup {font-size: map-get($font-size , "xl");}
+}
+.description {
+  display: flex;
+  align-items: center;
+  gap: .4em;
+  border-bottom: 1px solid $sec-font-color;
+  padding-block: .5em;
+  span{
+    font-size: map-get($font-size , "medium");
+    font-weight: 500;
+  }
+}
+.location , .date{
+  padding-block-start: .5em;
+  display: flex;
+  align-items: center;
+  gap: .4em;
+  span{
+    font-size: map-get($font-size , "medium");
+    font-weight: 500;
+  }
+}
+.date {
+  time{
+    font-size: map-get($font-size, "medium");
+    font-weight: 500;
+  }
+  .time{font-weight: 700;}
+}
+
+// prediction
+.prediction {
+  position: relative;
+  background: black;
+  border-radius: $border-radius;
+  img {
+    @include image-width();
+    opacity: 0.7;
+  }
+}
+.cloud {
+  position: absolute;
+  top: 18px;
+  left: 5%;
+  display: flex;
+  gap: .5em;
+  align-items: center;
+  i {
+    color: $background-color;
+    font-size: map-get($font-size , "icon-small");
+    background-color: $primary-font-color;
+    border-radius: 50%;
+    padding: .3em;
+  }
+  p {
+    font-size: map-get($font-size , "medium");
+    margin-block-end: .1em;
+    font-weight: 600;
+  }
+  span {font-size: map-get($font-size , "small");}
+}
+.temp-row {
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .7em;
+  text-align: center;
+  div {
+    padding: .5em;
+    border-radius: $border-radius;
+  }
+  p {font-size: .6rem}
+  .deg {
+    font-size: map-get($font-size , "medium");
+    padding-block-start: .4em;
+    font-weight: 600;
+  }
+}
+.max-temp {background-color: $background-color;}
+.min-temp {background-color: $accent-color}
+.feels-like {
+  color: $background-color;
+  background-color: $primary-font-color;
+}
+
+// forecast
+.forecast {@include background}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  padding-block-end: .5em;
+  align-items: center;
+  p {
+    @extend %toggler;
+    padding: .5em .7em;
+  }
+}
+.subtitle { color: $heading-color;}
+.forecast-col {
+  background-color: $accent-color;
+  border-radius: $border-radius;
+  padding-inline: .4em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-end: .7em;
+  img {width: 30%}
+}
+.forecast-temp {
+  font-size: map-get($font-size , "large" );
+  font-weight: 600;
+}
+.forecast-day {
+  font-size: map-get($font-size , "small" );
+  font-weight: 500;
+}
+
+// overview 
+.overview {
+  @include background();
+  .subtitle {
+    margin-block-end: .5em;
+  }
+}
+.overview-col {
+  background-color: $background-color;
+  border-radius: $border-radius;
+  padding: 1em 1.5em;
+  margin-block-end: .7em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  i {font-size: map-get($font-size , "xl");}
+  span {
+    font-size: map-get($font-size , "medium");
+    color: $sec-font-color;
+  }
+  p {
+    margin-block-start: .3em;
+    font-size: map-get($font-size , "icon-small");
+    font-weight: 500;
+  }
+}
+footer {
+  @include button();
+  @extend %container;
+  margin-block: 2em;
+  padding-block:1em;
+  border-radius:$border-radius;
+  text-align: center;
+}
+small {font-weight: 500;}
+a { color:$primary-font-color; }
+
+@media screen and (min-width: 600px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: .7em;
+  }
+  .nav-toggler {display: none;}
+  .details{grid-area: details;}
+  .prediction{grid-area: prediction;}
+  .forecast{grid-area: forecast;}
+  .picture{grid-area: picture;}
+  .overview{grid-area: overview;}
+  .main{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "details prediction"
+    "forecast forecast"
+    "overview overview";
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.7em;
+  }
+  .forecast-temp {
+    font-size: map-get($font-size, "icon-small" );
+  }
+  .forecast-day {
+    font-size: map-get($font-size, "large");
+  }
+  .overview {
+    p {font-size: map-get($font-size, "icon-medium");}
+  }
+  .cloud {
+    p {font-size: map-get($font-size , "large");}
+    span {font-size: map-get($font-size , "medium");}
+  }
+  .temp-row {
+    p {font-size: map-get($font-size, "medium");}
+   .deg {font-size: map-get($font-size , "large");}
+  }
+} 
+
+@media screen and (min-width: 800px) {
+  .main{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "details prediction forecast"
+    "overview overview forecast";
+  }
+  .forecast-row {display: block;}
+  .forecast-col {flex-wrap: nowrap;}
+  .picture {
+    display: block;
+    img {@include image-width();}
+    figcaption {
+      text-align: center;
+      margin-block-start: .5em;
+      font-size: map-get($font-size, "large");
+      color: $heading-color;
+      font-weight: 600;
+    }
+  }
 }

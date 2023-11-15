@@ -1,155 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skyline</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skyline</title>
 
-    <!--Custom font link-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!--Custom font link-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-     <!--Remix Icon cdn link-->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!--Remix Icon cdn link-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="src/styles/style.scss">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <p class="logo">
-                <span>Skyline</span>
-            </p>
+  <header class="header">
+    <section class="wrapper">
+      <div class="logo">
+        <i class="ri-foggy-fill"></i>
+        <p>Skyline</p>
+      </div>
 
-            <button class="nav-toggler">
-                <i class="ri-menu-line"></i>
-            </button>
+      <button class="nav-toggler">
+        <i class="ri-menu-line"></i>
+      </button>
 
-            <nav>
-                <input type="text" class="search-input" id="search-input" placeholder="Search city">
-                <button class="celsius" id="celsius">°C</button>
-                <button class="fahrenheit" id="fahrenheit">°F</button>
-            </nav>
+      <nav class="navbar">
+        <form class="search-form">
+          <input type="text" name="" id="search-input" class="search-input" placeholder="Search city">
+          <button id="search-btn" class="search-btn">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+        <div class="toggle">
+          <p class="celsius" id="celsius">
+            <i class="ri-celsius-line"></i>
+          </p>
+          <p class="fahrenheit" id="fahrenheit">
+            <i class="ri-fahrenheit-fill"></i>
+          </p>
         </div>
-    </header>
+      </nav>
+    </section>
+  </header>
 
-    <main>
-        <section class="details">
-            <img src="media/icon.png" alt="cloudy weather" class="weather-icon">
-            <p class="temperature" id="temperature">28<sup>°C</sup></p>
-            <p class="description">
-                <i class="ri-heavy-showers-line"></i>
-                <span id="description">Rainy Storm Clouds</span>
-            </p>
-            <p class="location">
-                <i class="ri-map-pin-line"></i>
-                <span id="location">Port Harcourt, Nigeria</span>
-            </p>
-            <p class="date">
-                <i class="ri-calendar-2-line"></i>
-                <span id="date"></span>
-                <span class="time" id="time"></span>
-            </p>
-        </section>
+  <main class="main">
+    <section class="details">
+      <img src="/public/icon.png" alt="cloudy weather" class="weather-icon">
+      <p class="temperature">
+        <span id="temperature">28</span>
+        <sup>°C</sup>
+      </p>
+      <p class="description">
+        <i class="ri-sparkling-fill"></i>
+        <span id="description">Rainy Storm Clouds</span>
+      </p>
+      <p class="location">
+        <i class="ri-map-pin-line"></i>
+        <span id="location">Port Harcourt, Nigeria</span>
+      </p>
+      <p class="date">
+        <i class="ri-calendar-2-line"></i>
+        <time id="date" datetime="2021-01-01">24 July, 2020</time>
+        <time class="time" id="time">5:01 AM</time>
+      </p>
+    </section>
 
-        <section class="prediction">
-            <h3>Weather Prediction</h3>
-            <div class="cloud">
-                <p>Cloudiness</p>
-                <p>How cloudy is the day: 100%</p>
-            </div>
-            <div>
-                <div class="max-temp">
-                    <p>Max Temp</p>
-                    <p class="deg">300.05°C</p>
-                </div>
-                <div class="min-temp">
-                    <p>Min Temp</p>
-                    <p class="deg">297.56°C</p>
-                </div>
-                <div class="feels-like">
-                    <p>Feels Like</p>
-                    <p class="deg">298.74°C</p>
-                </div>
-            </div>
-        </section>
+    <section class="prediction">
+      <img src="/public/prediction.png" alt="an illustration of a landscape in the night">
+      <div class="cloud">
+        <i class="ri-cloudy-fill"></i>
+        <div>
+          <p>Cloudiness</p>
+          <span>How cloudy is the day: 100%</span>
+        </div>
+      </div>
+      <div class="temp-row">
+        <div class="max-temp">
+          <p>Max Temp</p>
+          <p class="deg">300.05°C</p>
+        </div>
+        <div class="min-temp">
+          <p>Min Temp</p>
+          <p class="deg">297.56°C</p>
+        </div>
+        <div class="feels-like">
+          <p>Feels Like</p>
+          <p class="deg">298.74°C</p>
+        </div>
+      </div>
+    </section>
 
-        <section class="forecast">
-            <div class="heading">
-                <h3>Forecast</h3>
-                <p>3 days</p>
-            </div>
-            <div class="weather-forecast">
-                <img src="media/icon.png" alt="">
-                <p class="forecast-temperature">29°C</p>
-                <p class="day" id="forecast-date">25 July</p>
-                <p class="day" id="day">Tuesday</p>
-            </div>
-            <div class="weather-forecast">
-                <img src="media/icon.png" alt="">
-                <p class="forecast-temperature">21°C</p>
-                <p class="day" id="forecast-date">26 July</p>
-                <p class="day" id="day">Wednesday</p>
-            </div>
-            <div class="weather-forecast">
-                <img src="media/icon.png" alt="">
-                <p class="forecast-temperature">24°C</p>
-                <p class="day" id="forecast-date">27 July</p>
-                <p class="day" id="day">Thursday</p>
-            </div>
-            <div class="weather-forecast">
-                <img src="media/icon.png" alt="">
-                <p class="forecast-temperature">30°C</p>
-                <p class="day" id="forecast-date">28 July</p>
-                <p class="day" id="day">Friday</p>
-            </div>
-        </section>
-        <section class="overview">
-            <div class="wind">
-                <div class="left">
-                    <span>Wind Status</span>
-                    <p>7.70 <span class="metric">km/h</span></p>
-                </div>
-                <div class="right"></div>
-            </div>
-            <div class="visibility">
-                <div class="left">
-                    <span>Visibility</span>
-                    <p>10.0 <span class="metric">km</span></p>
-                </div>
-                <div class="right"></div>
-            </div>
-            <div class="humidity">
-                <div class="left">
-                    <span>Humidity</span>
-                    <p>64 <span class="metric">%</span></p>
-                </div>
-                <div class="right"></div>
-            </div>
-            <div class="pressure">
-                <div class="left">
-                    <span>Pressure</span>
-                    <p>1015 <span class="metric">mb</span></p>
-                </div>
-                <div class="right"></div>
-            </div>
-            <div class="sunrise">
-                <div class="left">
-                    <span>Sunrise</span>
-                    <p>5:32 <span class="metric">am</span></p>
-                </div>
-                <div class="right"></div>
-            </div>
-            <div class="sunset">
-                <div class="left">
-                    <span>Sunset</span>
-                    <p>8:44 <span class="metric">pm</span></p>
-                </div>
-                <div class="right"></div>
-            </div>
-        </section>
-        <section class="picture">
-            <img src="" alt="">
-        </section>
-    </main>
+    <section class="forecast">
+      <div class="heading">
+        <h2 class="subtitle">Forecast</h2>
+        <p>4 days</p>
+      </div>
+      <div class="row forecast-row">
+        <div class="forecast-col">
+          <img src="/public/icon.png" alt="">
+          <p class="forecast-temp">29°C</p>
+          <p class="forecast-day" id="forecast-date">25 July</p>
+          <p class="forecast-day" id="day">Tuesday</p>
+        </div>
+        <div class="forecast-col">
+          <img src="/public/icon.png" alt="">
+          <p class="forecast-temp">21°C</p>
+          <p class="forecast-day" id="forecast-date">26 July</p>
+          <p class="forecast-day" id="day">Wednesday</p>
+        </div>
+        <div class="forecast-col">
+          <img src="/public/icon.png" alt="">
+          <p class="forecast-temp">24°C</p>
+          <p class="forecast-day" id="forecast-date">27 July</p>
+          <p class="forecast-day" id="day">Thursday</p>
+        </div>
+        <div class="forecast-col">
+          <img src="/public/icon.png" alt="">
+          <p class="forecast-temp">30°C</p>
+          <p class="forecast-day" id="forecast-date">28 July</p>
+          <p class="forecast-day" id="day">Friday</p>
+        </div>
+      </div>
+      <figure class="picture">
+        <img src="/public/placeholder.jpg" alt="weather landscape" />
+        <figcaption>Weather Landscape</figcaption>
+      </figure>
+    </section>
+
+        
+
+    <section class="overview">
+      <h2 class="subtitle">Overview</h2>
+      <div class="row">
+        <div class="wind overview-col">
+          <div class="right">
+            <i class="ri-windy-line"></i>
+          </div>
+          <div class="left">
+            <span>Wind Status</span>
+            <p>7.70 km/h</p>
+          </div>
+        </div>
+        <div class="visibility overview-col">
+          <div class="right">
+            <i class="ri-mist-fill"></i>
+          </div>
+          <div class="left">
+            <span>Visibility</span>
+            <p>10.0 km</p>
+          </div>
+        </div>
+        <div class="humidity overview-col">
+          <div class="right">
+            <i class="ri-drop-line"></i>
+          </div>
+          <div class="left">
+            <span>Humidity</span>
+            <p>64 %</p>
+          </div>
+        </div>
+        <div class="pressure overview-col">
+          <div class="right">
+            <i class="ri-dashboard-3-line"></i>
+          </div>
+          <div class="left">
+            <span>Pressure</span>
+            <p>1015 mb</p>
+          </div>
+        </div>
+        <div class="sunrise overview-col">
+          <div class="right">
+            <i class="ri-sun-line"></i>
+          </div>
+          <div class="left">
+            <span>Sunrise</span>
+            <p>5:32 am</p>
+          </div>
+        </div>
+        <div class="sunset overview-col">
+          <div class="right">
+            <i class="ri-moon-line"></i>
+          </div>
+          <div class="left">
+            <span>Sunset</span>
+            <p>8:44 pm</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small><a href="https://github.com/Owanate/skyline" target="_blank">Open-source code</a>, by Owanate</small>
+  </footer>
 </body>
 </html>
