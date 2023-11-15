@@ -34,22 +34,22 @@ $font-size: (
   font-weight: 600;
 }
 
+@mixin image-width() {
+  width: 100%;
+  max-width: 600px;
+  object-fit: cover;
+  border-radius: $border-radius;
+}
+
 %toggler {
   background-color: $background-color;
   border-radius: 15px;
 }
 
 %container {
-  width: 85%;
+  width: 90%;
   max-width: 1200px;
   margin-inline: auto;
-}
-
-@mixin image-width() {
-  width: 100%;
-  max-width: 600px;
-  object-fit: cover;
-  border-radius: $border-radius;
 }
 
 * {

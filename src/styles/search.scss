@@ -1,0 +1,129 @@
+$primary-font-color: #e3e3e3;
+$accent-color: #ffffff2e;
+$background-color: #113f67;
+$font-family: 'Roboto', sans-serif;
+$border-radius: 10px;
+
+$font-size: (
+  "small": .7rem,
+  "medium": .9rem,
+  "large": 1.1rem,
+  "icon-small": 1.3rem,
+  "icon-medium": 1.5rem,
+  "xl": 2rem,
+  "xxl": 3rem,
+);
+
+@mixin background() {
+    background: hwb(0 100% 0% / 0.149);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 0px );
+    border-radius: $border-radius;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../../public/background.jpg") center center/cover no-repeat;
+  color: $primary-font-color;
+  font-family: $font-family;
+  height: 100vh;
+}
+
+.container {
+    @include background();
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 600px;
+    margin-inline: auto;
+    margin-block: 2.5em;
+    border: 7px solid $accent-color;
+}
+.header {
+    border-bottom: 3px solid $accent-color;
+    padding: 1em .5em;
+    text-align: end;
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+    p {
+       border: 2px solid $accent-color; 
+       padding: .3em .5em;
+       border-radius: $border-radius;
+       font-size: map-get($font-size, "small");
+    }
+    i {
+        font-size: map-get($font-size, "medium");
+        padding-inline-end: .2em;
+        color: $primary-font-color;
+        font-weight: 600;
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    margin-block-start: 1em;
+    font-weight: 500;
+}
+.temperature {font-size: map-get($font-size, "xxl");}
+.main {font-size: map-get($font-size, "icon-medium");}
+
+.highlight {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+}
+.highlight-row {
+    @include background();
+    border: 3px solid $accent-color;
+    padding: .7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $background-color;
+    gap: 5px;
+    p{
+        font-size: map-get($font-size, "large");
+        font-weight: 600;
+    }
+    i{font-size: map-get($font-size, "icon-medium");}
+}
+.subtitle {
+    font-size: map-get($font-size, "medium");
+}
+
+small {
+    display: block;
+    margin: .3em 1em;
+    font-size: map-get($font-size, "medium");
+    font-weight: 600;
+    a {color: $primary-font-color}
+}
+
+@media screen and (min-width: 600px) {
+    .header {
+        p {font-size: map-get($font-size, "large");}
+        i {font-size: map-get($font-size, "icon-small");}
+    }
+    .highlight-row {
+        i {font-size: map-get($font-size, "icon-medium");}
+    }
+    small {
+        margin: 1em;
+        font-size: map-get($font-size, "icon-small");
+    }
+}
