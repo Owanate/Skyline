@@ -15,8 +15,8 @@ Skyline solves the challenge of getting accurate and personalized weather foreca
 
 ### Links
 
-- Solution URL: [Add solution URL here]()
-- Live Site URL: [Add live site URL here]()
+- Solution URL: [GitHub](https://github.com/Owanate/skyline)
+- Live Site URL: [Netlify]()
 
 ## My Process
 Skyline is built using HTML, CSS, and JavaScript. It is a fully responsive web application that works on desktop and mobile devices.
