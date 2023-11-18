@@ -29,10 +29,11 @@ $font-size: (
 }
 
 body {
-  background: url("../../public/background.jpg") center center/cover no-repeat;
-  color: $primary-font-color;
-  font-family: $font-family;
-  height: 100vh;
+    background: url("../../public/background.jpg") center center/cover no-repeat;
+    background-blend-mode: darken;
+    color: $primary-font-color;
+    font-family: $font-family;
+    height: 100vh;
 }
 
 .container {
@@ -79,6 +80,7 @@ body {
 }
 .temperature {font-size: map-get($font-size, "xxl");}
 .main {font-size: map-get($font-size, "icon-medium");}
+.description {text-transform: capitalize;}
 
 .highlight {
     display: flex;
@@ -94,13 +96,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: $background-color;
     gap: 5px;
     p{
         font-size: map-get($font-size, "large");
         font-weight: 600;
     }
-    i{font-size: map-get($font-size, "icon-medium");}
+    i{
+        color: $background-color;
+        font-size: map-get($font-size, "icon-medium");
+    }
 }
 .subtitle {
     font-size: map-get($font-size, "medium");

@@ -34,61 +34,53 @@
             <i class="ri-search-line"></i>
           </button>
         </form>
-        <div class="toggle">
-          <p class="celsius" id="celsius">
-            <i class="ri-celsius-line"></i>
-          </p>
-          <p class="fahrenheit" id="fahrenheit">
-            <i class="ri-fahrenheit-fill"></i>
-          </p>
-        </div>
       </nav>
     </section>
   </header>
 
   <main class="main">
     <section class="details">
-      <img src="/public/icon.png" alt="cloudy weather" class="weather-icon">
+      <img src="" alt="" class="weather-icon">
       <p class="temperature">
-        <span id="temperature">28</span>
+        <span id="temperature"></span>
         <sup>°C</sup>
       </p>
       <p class="description">
         <i class="ri-sparkling-fill"></i>
-        <span id="description">Rainy Storm Clouds</span>
+        <span id="description"></span>
       </p>
       <p class="location">
         <i class="ri-map-pin-line"></i>
-        <span id="location">Port Harcourt, Nigeria</span>
+        <span id="location"></span>
       </p>
       <p class="date">
         <i class="ri-calendar-2-line"></i>
-        <time id="date" datetime="2021-01-01">24 July, 2020</time>
-        <time class="time" id="time">5:01 AM</time>
+        <time id="date" datetime="2021-01-01"></time>
+        <time class="time" id="time"></time>
       </p>
     </section>
 
     <section class="prediction">
-      <img src="/public/prediction.png" alt="an illustration of a landscape in the night">
+      <img src="/public/prediction.png" alt="">
       <div class="cloud">
         <i class="ri-cloudy-fill"></i>
         <div>
           <p>Cloudiness</p>
-          <span>How cloudy is the day: 100%</span>
+          <span>How cloudy is the day: <span id="clouds"></span></span>
         </div>
       </div>
       <div class="temp-row">
         <div class="max-temp">
           <p>Max Temp</p>
-          <p class="deg">300.05°C</p>
+          <p class="deg" id="max-temp"></p>
         </div>
         <div class="min-temp">
           <p>Min Temp</p>
-          <p class="deg">297.56°C</p>
+          <p class="deg" id="min-temp"></p>
         </div>
         <div class="feels-like">
           <p>Feels Like</p>
-          <p class="deg">298.74°C</p>
+          <p class="deg" id="feels-like"></p>
         </div>
       </div>
     </section>
@@ -98,39 +90,12 @@
         <h2 class="subtitle">Forecast</h2>
         <p>4 days</p>
       </div>
-      <div class="row forecast-row">
-        <div class="forecast-col">
-          <img src="/public/icon.png" alt="">
-          <p class="forecast-temp">29°C</p>
-          <p class="forecast-day" id="forecast-date">25 July</p>
-          <p class="forecast-day" id="day">Tuesday</p>
-        </div>
-        <div class="forecast-col">
-          <img src="/public/icon.png" alt="">
-          <p class="forecast-temp">21°C</p>
-          <p class="forecast-day" id="forecast-date">26 July</p>
-          <p class="forecast-day" id="day">Wednesday</p>
-        </div>
-        <div class="forecast-col">
-          <img src="/public/icon.png" alt="">
-          <p class="forecast-temp">24°C</p>
-          <p class="forecast-day" id="forecast-date">27 July</p>
-          <p class="forecast-day" id="day">Thursday</p>
-        </div>
-        <div class="forecast-col">
-          <img src="/public/icon.png" alt="">
-          <p class="forecast-temp">30°C</p>
-          <p class="forecast-day" id="forecast-date">28 July</p>
-          <p class="forecast-day" id="day">Friday</p>
-        </div>
-      </div>
+      <div class="row forecast-row"></div>
       <figure class="picture">
-        <img src="/public/placeholder.jpg" alt="weather landscape" />
+        <img src="" alt="weather landscape"  id="picture"/>
         <figcaption>Weather Landscape</figcaption>
       </figure>
     </section>
-
-        
 
     <section class="overview">
       <h2 class="subtitle">Overview</h2>
@@ -141,7 +106,7 @@
           </div>
           <div class="left">
             <span>Wind Status</span>
-            <p>7.70 km/h</p>
+            <p id="wind"></p>
           </div>
         </div>
         <div class="visibility overview-col">
@@ -150,7 +115,7 @@
           </div>
           <div class="left">
             <span>Visibility</span>
-            <p>10.0 km</p>
+            <p id="visibility"></p>
           </div>
         </div>
         <div class="humidity overview-col">
@@ -159,7 +124,7 @@
           </div>
           <div class="left">
             <span>Humidity</span>
-            <p>64 %</p>
+            <p id="humidity"></p>
           </div>
         </div>
         <div class="pressure overview-col">
@@ -168,7 +133,7 @@
           </div>
           <div class="left">
             <span>Pressure</span>
-            <p>1015 mb</p>
+            <p id="pressure"></p>
           </div>
         </div>
         <div class="sunrise overview-col">
@@ -177,7 +142,7 @@
           </div>
           <div class="left">
             <span>Sunrise</span>
-            <p>5:32 am</p>
+            <p id="sunrise"></p>
           </div>
         </div>
         <div class="sunset overview-col">
@@ -186,7 +151,7 @@
           </div>
           <div class="left">
             <span>Sunset</span>
-            <p>8:44 pm</p>
+            <p id="sunset"></p>
           </div>
         </div>
       </div>
@@ -196,5 +161,7 @@
   <footer>
     <small><a href="/src/search.html">Open-source code</a>, by Owanate</small>
   </footer>
+
+  <script src="/src/js/main.js" type="module"></script>
 </body>
 </html>
