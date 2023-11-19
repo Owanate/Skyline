@@ -123,5 +123,6 @@ searchBtn.addEventListener("click", (event) => {
         alert('Must provide a city to search...');
         throw new Error('No search query found');
     }
-    return window.location.href = `/src/search.html?query=${encodeURIComponent(searchQuery)}`;
+    localStorage.setItem("searchQuery", searchQuery);
+    window.location.href = './src/search.html';
 });

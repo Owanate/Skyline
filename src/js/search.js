@@ -1,7 +1,6 @@
 import { displayDateTime } from "./date.js";
 
-const urlSearchParams = new URLSearchParams(window.location.search);
-const query = urlSearchParams.get("query");
+const query = localStorage.getItem("searchQuery");
 
 // Get APIKey
 const apiKey = "f930a8b2e71bc550aac09c0222dd9f2d";
