@@ -33,7 +33,7 @@ Skyline is built using HTML, CSS, and JavaScript. It is a fully responsive web a
 In this project, I learned: 
 - How to properly structure the folders in my project using vite-a module bundle tool.
 - How to write SCSS code that the browser can understand
-- How to use Browser APIs including Fetch API and Geolocation API.
+- How to use Browser APIs including Fetch API, Geolocation API and Browser Storage API.
 - How to write commit messages, create branches, use git and github effectively.
 - How to use JavaScript Data Structures.
 
@@ -46,8 +46,8 @@ In this project, I learned:
 This project is built using Vite, to run this project locally using npm 
 
 ```bash
-  npm install skyline
   cd skyline
+  npm install skyline
   npm run dev
 ```
 
