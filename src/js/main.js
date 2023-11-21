@@ -1,7 +1,7 @@
 import { displayDateTime, months } from "./date.js";
 
 // Toggle NavBar
-document.querySelector(".nav-toggler").addEventListener("click", function () {
+document.querySelector(".nav-toggler").addEventListener("click", () => {
   const navbar = document.querySelector(".navbar");
   navbar.classList.toggle("navbar--visible");
 });
@@ -36,34 +36,34 @@ function displayWeather(lat, lon) {
         ".weather-icon"
       ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       document.querySelector(".weather-icon").alt = data.weather[0].description;
-      document.querySelector("#temperature").innerText = data.main.temp;
-      document.querySelector("#description").innerText =
+      document.querySelector("#temperature").textContent = data.main.temp;
+      document.querySelector("#description").textContent =
         data.weather[0].description;
       document.querySelector(
         "#location"
-      ).innerText = `${data.name}, ${data.sys.country}`;
-      document.querySelector("#clouds").innerText = `${data.clouds.all}%`;
-      document.querySelector("#max-temp").innerText = `${data.main.temp_max}°C`;
-      document.querySelector("#min-temp").innerText = `${data.main.temp_min}°C`;
+      ).textContent = `${data.name}, ${data.sys.country}`;
+      document.querySelector("#clouds").textContent = `${data.clouds.all}%`;
+      document.querySelector("#max-temp").textContent = `${data.main.temp_max}°C`;
+      document.querySelector("#min-temp").textContent = `${data.main.temp_min}°C`;
       document.querySelector(
         "#feels-like"
-      ).innerText = `${data.main.feels_like}°C`;
-      document.querySelector("#wind").innerText = `${data.wind.speed} km/h`;
-      document.querySelector("#visibility").innerText = `${
+      ).textContent = `${data.main.feels_like}°C`;
+      document.querySelector("#wind").textContent = `${data.wind.speed} km/h`;
+      document.querySelector("#visibility").textContent = `${
         data.visibility / 1000
       }.0 km`;
       document.querySelector(
         "#pressure"
-      ).innerText = `${data.main.pressure} mb`;
-      document.querySelector("#humidity").innerText = `${data.main.humidity} %`;
+      ).textContent = `${data.main.pressure} mb`;
+      document.querySelector("#humidity").textContent = `${data.main.humidity} %`;
       const sunrise = convertTimestamp(data.sys.sunrise);
       document.querySelector(
         "#sunrise"
-      ).innerText = `${sunrise.hours}:${sunrise.minutes} am`;
+      ).textContent = `${sunrise.hours}:${sunrise.minutes} am`;
       const sunset = convertTimestamp(data.sys.sunset);
       document.querySelector(
         "#sunset"
-      ).innerText = `${sunset.hours}:${sunset.minutes} pm`;
+      ).textContent = `${sunset.hours}:${sunset.minutes} pm`;
     });
 }
 
@@ -120,8 +120,8 @@ searchBtn.addEventListener("click", (event) => {
     event.preventDefault();
     const searchQuery = document.querySelector("#search-input").value;
     if (!searchQuery) {
-        alert('Must provide a city to search...');
-        throw new Error('No search query found');
+      alert('Must provide a city to search...');
+      throw new Error('No search query found');
     }
     localStorage.setItem("searchQuery", searchQuery);
     window.location.href = './src/search.html';

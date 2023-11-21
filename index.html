@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skyline</title>
   <link rel="icon" type="image/png" href="public/icon.png">
+  <meta name="description" content="Skyline is a personalized weather app that provides users with weather-condition data based on their location history and search parameters.">
 
   <!--Custom font link-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,20 +20,20 @@
 <body>
   <header class="header">
     <section class="wrapper">
-      <div class="logo">
-        <i class="ri-foggy-fill"></i>
+      <div class="logo" aria-label="logo">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.5843 13.0069C1.20753 12.0786 1 11.0635 1 10C1 5.58172 4.58172 2 9 2C12.3949 2 15.2959 4.11466 16.4576 7.09864C16.7951 7.0339 17.1436 7 17.5 7C20.5376 7 23 9.46243 23 12.5C23 12.6709 22.9922 12.8399 22.977 13.0069H1.5843ZM4 19H21V21H4V19ZM2 15H23V17H2V15Z"></path></svg>
         <p>Skyline</p>
       </div>
 
-      <button class="nav-toggler">
-        <i class="ri-menu-line"></i>
+      <button class="nav-toggler" aria-label="menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
       </button>
 
       <nav class="navbar">
         <form class="search-form">
-          <input type="text" name="" id="search-input" class="search-input" placeholder="Search city">
-          <button id="search-btn" class="search-btn">
-            <i class="ri-search-line"></i>
+          <input type="text" name="search-query" id="search-input" class="search-input" required>
+          <button id="search-btn" class="search-btn" type="submit" aria-label="search">
+            <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
           </button>
         </form>
       </nav>
@@ -40,31 +41,31 @@
   </header>
 
   <main class="main">
-    <section class="details">
+    <section class="details" role="region" aria-label="weather-details">
       <img src="" alt="" class="weather-icon">
-      <p class="temperature">
+      <p class="temperature" aria-labelledby="temperature">
         <span id="temperature"></span>
         <sup>°C</sup>
       </p>
-      <p class="description">
-        <i class="ri-sparkling-fill"></i>
+      <p class="description" aria-labelledby="description">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 4.4375C15.3462 4.4375 16.4375 3.34619 16.4375 2H17.5625C17.5625 3.34619 18.6538 4.4375 20 4.4375V5.5625C18.6538 5.5625 17.5625 6.65381 17.5625 8H16.4375C16.4375 6.65381 15.3462 5.5625 14 5.5625V4.4375ZM1 11C4.31371 11 7 8.31371 7 5H9C9 8.31371 11.6863 11 15 11V13C11.6863 13 9 15.6863 9 19H7C7 15.6863 4.31371 13 1 13V11ZM17.25 14C17.25 15.7949 15.7949 17.25 14 17.25V18.75C15.7949 18.75 17.25 20.2051 17.25 22H18.75C18.75 20.2051 20.2051 18.75 22 18.75V17.25C20.2051 17.25 18.75 15.7949 18.75 14H17.25Z"></path></svg>
         <span id="description"></span>
       </p>
-      <p class="location">
-        <i class="ri-map-pin-line"></i>
+      <p class="location" aria-labelledby="location">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20.8995L16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13ZM12 15C9.79086 15 8 13.2091 8 11C8 8.79086 9.79086 7 12 7C14.2091 7 16 8.79086 16 11C16 13.2091 14.2091 15 12 15Z"></path></svg>
         <span id="location"></span>
       </p>
       <p class="date">
-        <i class="ri-calendar-2-line"></i>
-        <time id="date" datetime="2021-01-01"></time>
-        <time class="time" id="time"></time>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM8 13V15H6V13H8ZM13 13V15H11V13H13ZM18 13V15H16V13H18ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"></path></svg>
+        <time id="date" aria-label="date"></time>
+        <time class="time" id="time" aria-label="time"></time>
       </p>
     </section>
 
-    <section class="prediction">
+    <section class="prediction" role="region" aria-label="weather-details">
       <img src="/public/prediction.png" alt="">
       <div class="cloud">
-        <i class="ri-cloudy-fill"></i>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20.9855C4.53831 20.7267 1 17.0266 1 12.5C1 7.80558 4.80558 4 9.5 4C12.5433 4 15.2131 5.59939 16.7146 8.00348C20.2051 8.11671 23 10.982 23 14.5C23 17.9216 20.3562 20.7257 17 20.9811V21H9V20.9855Z"></path></svg>
         <div>
           <p>Cloudiness</p>
           <span>How cloudy is the day: <span id="clouds"></span></span>
@@ -86,24 +87,24 @@
       </div>
     </section>
 
-    <section class="forecast">
+    <section class="forecast" role="region" aria-labelledby="weather-forecast">
       <div class="heading">
-        <h2 class="subtitle">Forecast</h2>
+        <h2 class="subtitle" id="weather-forecast">Forecast</h2>
         <p>4 days</p>
       </div>
       <div class="row forecast-row"></div>
       <figure class="picture">
-        <img src="" alt="weather landscape"  id="picture"/>
+        <img src="" alt="weather landscape" id="picture"/>
         <figcaption>Weather Landscape</figcaption>
       </figure>
     </section>
 
-    <section class="overview">
-      <h2 class="subtitle">Overview</h2>
+    <section class="overview" role="region" aria-labelledby="weather-overview">
+      <h2 class="subtitle" id="weather-overview">Overview</h2>
       <div class="row">
         <div class="wind overview-col">
-          <div class="right">
-            <i class="ri-windy-line"></i>
+          <div class="right" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 17H4V15H10.5C12.433 15 14 16.567 14 18.5C14 20.433 12.433 22 10.5 22C8.99957 22 7.71966 21.0559 7.22196 19.7293L9.09513 19.0268C9.30843 19.5954 9.85696 20 10.5 20C11.3284 20 12 19.3284 12 18.5C12 17.6716 11.3284 17 10.5 17ZM5 11H18.5C20.433 11 22 12.567 22 14.5C22 16.433 20.433 18 18.5 18C16.9996 18 15.7197 17.0559 15.222 15.7293L17.0951 15.0268C17.3084 15.5954 17.857 16 18.5 16C19.3284 16 20 15.3284 20 14.5C20 13.6716 19.3284 13 18.5 13H5C3.34315 13 2 11.6569 2 10C2 8.34315 3.34315 7 5 7H13.5C14.3284 7 15 6.32843 15 5.5C15 4.67157 14.3284 4 13.5 4C12.857 4 12.3084 4.40463 12.0951 4.97317L10.222 4.27073C10.7197 2.94414 11.9996 2 13.5 2C15.433 2 17 3.567 17 5.5C17 7.433 15.433 9 13.5 9H5C4.44772 9 4 9.44772 4 10C4 10.5523 4.44772 11 5 11Z"></path></svg>
           </div>
           <div class="left">
             <span>Wind Status</span>
@@ -111,8 +112,8 @@
           </div>
         </div>
         <div class="visibility overview-col">
-          <div class="right">
-            <i class="ri-mist-fill"></i>
+          <div class="right" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4H8V6H4V4ZM16 19H20V21H16V19ZM2 9H12V11H2V9ZM14 9H20V11H14V9ZM4 14H10V16H4V14ZM12 14H22V16H12V14ZM10 4H22V6H10V4ZM2 19H14V21H2V19Z"></path></svg>
           </div>
           <div class="left">
             <span>Visibility</span>
@@ -120,8 +121,8 @@
           </div>
         </div>
         <div class="humidity overview-col">
-          <div class="right">
-            <i class="ri-drop-line"></i>
+          <div class="right" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.05025 8.04673L12 3.09698L16.9497 8.04673C19.6834 10.7804 19.6834 15.2126 16.9497 17.9462C14.2161 20.6799 9.78392 20.6799 7.05025 17.9462C4.31658 15.2126 4.31658 10.7804 7.05025 8.04673ZM18.364 6.63252L12 0.268555L5.63604 6.63252C2.12132 10.1472 2.12132 15.8457 5.63604 19.3604C9.15076 22.8752 14.8492 22.8752 18.364 19.3604C21.8787 15.8457 21.8787 10.1472 18.364 6.63252ZM16.2427 10.1714L14.8285 8.75718L7.7574 15.8282L9.17161 17.2425L16.2427 10.1714ZM8.11095 11.232C8.69674 11.8178 9.64648 11.8178 10.2323 11.232C10.8181 10.6463 10.8181 9.69652 10.2323 9.11073C9.64648 8.52494 8.69674 8.52494 8.11095 9.11073C7.52516 9.69652 7.52516 10.6463 8.11095 11.232ZM15.8891 16.8889C15.3033 17.4747 14.3536 17.4747 13.7678 16.8889C13.182 16.3031 13.182 15.3534 13.7678 14.7676C14.3536 14.1818 15.3033 14.1818 15.8891 14.7676C16.4749 15.3534 16.4749 16.3031 15.8891 16.8889Z"></path></svg>
           </div>
           <div class="left">
             <span>Humidity</span>
@@ -129,8 +130,8 @@
           </div>
         </div>
         <div class="pressure overview-col">
-          <div class="right">
-            <i class="ri-dashboard-3-line"></i>
+          <div class="right" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM15.8329 7.33748C16.0697 7.17128 16.3916 7.19926 16.5962 7.40381C16.8002 7.60784 16.8267 7.92955 16.6587 8.16418C14.479 11.2095 13.2796 12.8417 13.0607 13.0607C12.4749 13.6464 11.5251 13.6464 10.9393 13.0607C10.3536 12.4749 10.3536 11.5251 10.9393 10.9393C11.3126 10.5661 12.9438 9.36549 15.8329 7.33748ZM17.5 11C18.0523 11 18.5 11.4477 18.5 12C18.5 12.5523 18.0523 13 17.5 13C16.9477 13 16.5 12.5523 16.5 12C16.5 11.4477 16.9477 11 17.5 11ZM6.5 11C7.05228 11 7.5 11.4477 7.5 12C7.5 12.5523 7.05228 13 6.5 13C5.94772 13 5.5 12.5523 5.5 12C5.5 11.4477 5.94772 11 6.5 11ZM8.81802 7.40381C9.20854 7.79433 9.20854 8.4275 8.81802 8.81802C8.4275 9.20854 7.79433 9.20854 7.40381 8.81802C7.01328 8.4275 7.01328 7.79433 7.40381 7.40381C7.79433 7.01328 8.4275 7.01328 8.81802 7.40381ZM12 5.5C12.5523 5.5 13 5.94772 13 6.5C13 7.05228 12.5523 7.5 12 7.5C11.4477 7.5 11 7.05228 11 6.5C11 5.94772 11.4477 5.5 12 5.5Z"></path></svg>
           </div>
           <div class="left">
             <span>Pressure</span>
@@ -138,8 +139,8 @@
           </div>
         </div>
         <div class="sunrise overview-col">
-          <div class="right">
-            <i class="ri-sun-line"></i>
+          <div class="right" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path></svg>
           </div>
           <div class="left">
             <span>Sunrise</span>
@@ -147,8 +148,8 @@
           </div>
         </div>
         <div class="sunset overview-col">
-          <div class="right">
-            <i class="ri-moon-line"></i>
+          <div class="right" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"></path></svg>
           </div>
           <div class="left">
             <span>Sunset</span>
@@ -160,7 +161,7 @@
   </main>
 
   <footer>
-    <small><a href="https://github.com/Owanate/skyline">Open-source code</a>, by Owanate</small>
+    <address><a href="https://github.com/Owanate/skyline">Open-source code</a>, by Owanate</address>
   </footer>
 
   <script src="/src/js/main.js" type="module"></script>

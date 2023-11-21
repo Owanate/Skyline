@@ -59,12 +59,14 @@ body {
        border: 2px solid $accent-color; 
        padding: .3em .5em;
        border-radius: $border-radius;
-       font-size: map-get($font-size, "small");
+       display: flex;
+       align-items: center;
     }
-    i {
-        font-size: map-get($font-size, "medium");
+    span {font-size: map-get($font-size, "medium");}
+    svg {
+        width: map-get($font-size, "icon-small");
         padding-inline-end: .2em;
-        color: $primary-font-color;
+        fill: $primary-font-color;
         font-weight: 600;
     }
 }
@@ -99,11 +101,11 @@ body {
     gap: 5px;
     p{
         font-size: map-get($font-size, "large");
-        font-weight: 600;
+        font-weight: 500;
     }
-    i{
-        color: $background-color;
-        font-size: map-get($font-size, "icon-medium");
+    svg{
+        fill: $background-color;
+        width: map-get($font-size, "icon-medium");
     }
 }
 .subtitle {
@@ -115,7 +117,15 @@ small {
     margin: .3em 1em;
     font-size: map-get($font-size, "medium");
     font-weight: 600;
-    a {color: $primary-font-color}
+    a {
+        color: $primary-font-color;
+        display: flex;
+        align-items: center;
+    }
+    svg {
+        fill: $primary-font-color;
+        width: map-get($font-size, "icon-medium");
+    }
 }
 
 @media screen and (min-width: 600px) {

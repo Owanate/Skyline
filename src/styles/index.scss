@@ -27,11 +27,12 @@ $font-size: (
 
 @mixin button() {
   background-color: $background-color;
-  color: $primary-font-color;
+  fill: $primary-font-color;
   border: none;
   box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
   cursor: pointer;
   font-weight: 600;
+  width: 1.9rem;
 }
 
 @mixin image-width() {
@@ -87,6 +88,11 @@ body {
   color: $heading-color;
   display: flex;
   gap: .3em;
+  align-items: center;
+  svg {
+    width: 1.9rem;
+    fill: $heading-color;
+  }
 }
 .nav-toggler {
   @include button;
@@ -139,9 +145,9 @@ body {
 .details {
   @include background;
   padding: 0;
-  i{ 
-    font-size: map-get($font-size, "icon-small"); 
-    color: $sec-font-color;
+  svg { 
+    width: map-get($font-size, "icon-small"); 
+    fill: $sec-font-color;
   }
 }
 .weather-icon {
@@ -202,9 +208,9 @@ body {
   display: flex;
   gap: .5em;
   align-items: center;
-  i {
-    color: $background-color;
-    font-size: map-get($font-size , "icon-small");
+  svg {
+    fill: $background-color;
+    width: map-get($font-size , "xl");
     background-color: $primary-font-color;
     border-radius: 50%;
     padding: .3em;
@@ -285,7 +291,10 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  i {font-size: map-get($font-size , "xl");}
+  svg{
+    width: map-get($font-size , "xl");
+    fill: $sec-font-color;
+  }
   span {
     font-size: map-get($font-size , "medium");
     color: $sec-font-color;
@@ -297,14 +306,14 @@ body {
   }
 }
 footer {
-  @include button();
+  @extend %toggler;
   @extend %container;
   margin-block: 2em;
   padding-block:1em;
-  border-radius:$border-radius;
+  border-radius: $border-radius;
   text-align: center;
 }
-small {font-weight: 500;}
+address {font-weight: 500;}
 a { color:$primary-font-color; }
 
 @media screen and (min-width: 600px) {

@@ -17,17 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       document.querySelector(
         ".location"
-      ).innerText = `${data.name}, ${data.sys.country}`;
-      document.querySelector(".temperature").innerText = `${data.main.temp}°C`;
-      document.querySelector(".main").innerText = `${data.weather[0].main}`;
+      ).textContent = `${data.name}, ${data.sys.country}`;
+      document.querySelector(".temperature").textContent = `${data.main.temp}°C`;
+      document.querySelector(".main").textContent = `${data.weather[0].main}`;
       document.querySelector(
         ".description"
-      ).innerText = `${data.weather[0].description}`;
-      document.querySelector("#wind").innerText = `${data.wind.speed} km/h`;
+      ).textContent = `${data.weather[0].description}`;
+      document.querySelector("#wind").textContent = `${data.wind.speed} km/h`;
       document.querySelector(
         "#pressure"
-      ).innerText = `${data.main.pressure} mb`;
-      document.querySelector("#humidity").innerText = `${data.main.humidity} %`;
+      ).textContent = `${data.main.pressure} mb`;
+      document.querySelector("#humidity").textContent = `${data.main.humidity} %`;
       let image = `url(https://source.unsplash.com/1600x900/?${query}) center center/cover no-repeat`
         if(image) {
             document.body.style.background = image;
