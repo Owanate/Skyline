@@ -1,6 +1,6 @@
 import { displayDateTime } from "./date.js";
 
-const query = localStorage.getItem("searchQuery");
+let query = localStorage.getItem("searchQuery");
 
 // Get APIKey
 const apiKey = "f930a8b2e71bc550aac09c0222dd9f2d";
@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "#pressure"
       ).textContent = `${data.main.pressure} mb`;
       document.querySelector("#humidity").textContent = `${data.main.humidity} %`;
-      let image = `url(https://source.unsplash.com/1600x900/?${query}) center center/cover no-repeat`
+      let value = query.split(" ").join("-");
+      let image = `url(https://source.unsplash.com/1600x900/?${value}) center center/cover no-repeat`
         if(image) {
             document.body.style.background = image;
             document.body.style.backgroundColor = "rgba(0, 0, 0, 0.6)";

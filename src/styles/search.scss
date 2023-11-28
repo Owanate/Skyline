@@ -15,10 +15,10 @@ $font-size: (
 );
 
 @mixin background() {
-    background: rgba( 56, 89, 139, 0.45 );
+    background: rgba( 255, 255, 255, 0.35 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 16px );
-    -webkit-backdrop-filter: blur( 16px );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 12.5px );
     border-radius: $border-radius;
 }
 
@@ -92,13 +92,14 @@ body {
     padding: 1em;
 }
 .highlight-row {
-    @include background();
+    // @include background();
     border: 3px solid $accent-color;
     padding: .7em;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    border-radius: $border-radius;
     p{
         font-size: map-get($font-size, "large");
         font-weight: 500;
