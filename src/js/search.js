@@ -25,5 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
       }
     })
-    .catch(console.error("Fetch", error));
+    .catch(error => console.error("Fetch", error));
 });

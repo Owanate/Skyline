@@ -45,7 +45,7 @@ function displayWeather(lat, lon) {
       const sunset = convertTimestamp(data.sys.sunset);
       document.querySelector("#sunset").textContent = `${sunset.hours}:${sunset.minutes} pm`;
     })
-    .catch(console.error("Fetch", error));
+    .catch(error => console.error("Fetch", error));
 }
 
 // Weather Forecast
