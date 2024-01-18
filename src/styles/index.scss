@@ -6,13 +6,13 @@ $font-family: 'Roboto', sans-serif;
 $border-radius: 10px;
 
 $font-size: (
-  "small": .7rem,
-  "medium": .9rem,
-  "large": 1.1rem,
-  "icon-small": 1.3rem,
-  "icon-medium": 1.5rem,
-  "xl": 2rem,
-  "xxl": 3rem,
+  'small': .7rem,
+  'medium': .9rem,
+  'large': 1.1rem,
+  'icon-small': 1.3rem,
+  'icon-medium': 1.5rem,
+  'xl': 2rem,
+  'xxl': 3rem,
 );
 
 @mixin background() {
@@ -59,7 +59,7 @@ $font-size: (
 }
 
 body {
-  background: url("../../public/background.jpg") center center/cover no-repeat;
+  background: url('../../public/background.jpg') center center/cover no-repeat;
   color: $primary-font-color;
   font-family: $font-family;
 }
@@ -82,7 +82,7 @@ body {
   align-items: center;
 }
 .logo {
-  font-size: map-get($font-size , "icon-medium");
+  font-size: map-get($font-size , 'icon-medium');
   font-weight: 700;
   color: $heading-color;
   display: flex;
@@ -98,7 +98,9 @@ body {
   border-radius: 5px;
   padding: .5em .7em;
 }
-.navbar, .picture {display: none}
+.navbar, .picture {
+  display: none
+}
 .navbar--visible{
   display: block;
   background-color: $accent-color;
@@ -145,7 +147,7 @@ body {
   @include background;
   padding: 0;
   svg { 
-    width: map-get($font-size, "icon-small"); 
+    width: map-get($font-size, 'icon-small'); 
     fill: $primary-font-color;
   }
 }
@@ -153,12 +155,14 @@ body {
   width: 50%;
 }
 .temperature {
-  font-size: map-get($font-size , "xxl");
+  font-size: map-get($font-size , 'xxl');
   font-weight: 400;
   display: flex;
   align-items: flex-start;
   padding-inline: .5em;
-  sup {font-size: map-get($font-size , "xl");}
+  sup {
+    font-size: map-get($font-size , 'xl');
+  }
 }
 .description {
   display: flex;
@@ -167,7 +171,7 @@ body {
   border-bottom: 1px solid $primary-font-color;
   padding: .5em 1.5em;
   span{
-    font-size: map-get($font-size , "medium");
+    font-size: map-get($font-size , 'medium');
     font-weight: 500;
     text-transform: capitalize;
   }
@@ -178,16 +182,18 @@ body {
   align-items: center;
   gap: .4em;
   span{
-    font-size: map-get($font-size , "medium");
+    font-size: map-get($font-size , 'medium');
     font-weight: 500;
   }
 }
 .date {
   time{
-    font-size: map-get($font-size, "medium");
+    font-size: map-get($font-size, 'medium');
     font-weight: 500;
   }
-  .time{font-weight: 700;}
+  .time{
+    font-weight: 700;
+  }
 }
 
 // prediction
@@ -209,17 +215,19 @@ body {
   align-items: center;
   svg {
     fill: $background-color;
-    width: map-get($font-size , "xl");
+    width: map-get($font-size , 'xl');
     background-color: $primary-font-color;
     border-radius: 50%;
     padding: .3em;
   }
   p {
-    font-size: map-get($font-size , "medium");
+    font-size: map-get($font-size , 'medium');
     margin-block-end: .1em;
     font-weight: 600;
   }
-  span {font-size: map-get($font-size , "small");}
+  span {
+    font-size: map-get($font-size , 'small');
+  }
 }
 .temp-row {
   position: absolute;
@@ -234,22 +242,30 @@ body {
     padding: .5em;
     border-radius: $border-radius;
   }
-  p {font-size: .6rem}
+  p {
+    font-size: .6rem
+  }
   .deg {
-    font-size: map-get($font-size , "medium");
+    font-size: map-get($font-size , 'medium');
     padding-block-start: .4em;
     font-weight: 600;
   }
 }
-.max-temp {background-color: $background-color;}
-.min-temp {background-color: $accent-color}
+.max-temp {
+  background-color: $background-color;
+}
+.min-temp {
+  background-color: $accent-color
+}
 .feels-like {
   color: $background-color;
   background-color: $primary-font-color;
 }
 
 // forecast
-.forecast {@include background}
+.forecast {
+  @include background
+}
 .heading {
   display: flex;
   justify-content: space-between;
@@ -260,7 +276,9 @@ body {
     padding: .5em .7em;
   }
 }
-.subtitle { color: $heading-color;}
+.subtitle { 
+  color: $heading-color;
+}
 .forecast-col {
   background-color: $accent-color;
   border-radius: $border-radius;
@@ -268,10 +286,12 @@ body {
   align-items: center;
   gap: 10px;
   margin-block-end: .7em;
-  img {width: 4em}
+  img {
+    width: 4em
+  }
 }
 .forecast-temp {
-  font-size: map-get($font-size , "large" );
+  font-size: map-get($font-size , 'large');
   font-weight: 600;
 }
 
@@ -291,16 +311,16 @@ body {
   align-items: center;
   gap: 20px;
   svg{
-    width: map-get($font-size , "xl");
+    width: map-get($font-size , 'xl');
     fill: $primary-font-color;
   }
   span {
-    font-size: map-get($font-size , "medium");
+    font-size: map-get($font-size , 'medium');
     color: $primary-font-color;
   }
   p {
     margin-block-start: .3em;
-    font-size: map-get($font-size , "icon-small");
+    font-size: map-get($font-size , 'icon-small');
     font-weight: 500;
   }
 }
@@ -312,8 +332,12 @@ footer {
   border-radius: $border-radius;
   text-align: center;
 }
-address {font-weight: 500;}
-a { color:$primary-font-color; }
+address {
+  font-weight: 500;
+}
+a { 
+  color:$primary-font-color; 
+}
 
 @media screen and (min-width: 600px) {
   .navbar {
@@ -326,18 +350,28 @@ a { color:$primary-font-color; }
     height: 2.5em;
     width: 20em;
   }
-  .search-input, ::placeholder {font-size: map-get($font-size, "large");}
-  .details{grid-area: details;}
-  .prediction{grid-area: prediction;}
-  .forecast{grid-area: forecast;}
-  .picture{grid-area: picture;}
-  .overview{grid-area: overview;}
+  .search-input, ::placeholder {font-size: map-get($font-size, 'large');}
+  .details{
+    grid-area: details;
+  }
+  .prediction{
+    grid-area: prediction;
+  }
+  .forecast{
+    grid-area: forecast;
+  }
+  .picture{
+    grid-area: picture;
+  }
+  .overview{
+    grid-area: overview;
+  }
   .main{
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
-    "details prediction"
-    "forecast forecast"
-    "overview overview";
+    'details prediction'
+    'forecast forecast'
+    'overview overview';
   }
   .row {
     display: grid;
@@ -345,21 +379,31 @@ a { color:$primary-font-color; }
     column-gap: 0.7em;
   }
   .forecast-temp {
-    font-size: map-get($font-size, "icon-small" );
+    font-size: map-get($font-size, 'icon-small');
   }
   .forecast-day {
-    font-size: map-get($font-size, "large");
+    font-size: map-get($font-size, 'large');
   }
   .overview {
-    p {font-size: map-get($font-size, "icon-medium");}
+    p {
+      font-size: map-get($font-size, "icon-medium");
+    }
   }
   .cloud {
-    p {font-size: map-get($font-size , "large");}
-    span {font-size: map-get($font-size , "medium");}
+    p {
+      font-size: map-get($font-size , 'large');
+    }
+    span {
+      font-size: map-get($font-size , 'medium');
+    }
   }
   .temp-row {
-    p {font-size: map-get($font-size, "medium");}
-   .deg {font-size: map-get($font-size , "large");}
+    p {
+      font-size: map-get($font-size, 'medium');
+    }
+   .deg {
+      font-size: map-get($font-size , 'large');
+    }
   }
 } 
 
@@ -367,8 +411,8 @@ a { color:$primary-font-color; }
   .main{
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
-    "details prediction forecast"
-    "overview overview forecast";
+    'details prediction forecast'
+    'overview overview forecast';
   }
   .forecast-row {
     display: block;
@@ -376,7 +420,9 @@ a { color:$primary-font-color; }
   }
   .forecast-col {
     gap: 20px;
-    img{width: 5em}
+    img{
+      width: 5em
+    }
   }
   .picture {
     display: block;
@@ -387,7 +433,7 @@ a { color:$primary-font-color; }
     figcaption {
       text-align: center;
       margin-block-start: .5em;
-      font-size: map-get($font-size, "large");
+      font-size: map-get($font-size, 'large');
       color: $heading-color;
       font-weight: 600;
     }
