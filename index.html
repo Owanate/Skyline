@@ -28,7 +28,7 @@
 
       <nav class="navbar">
         <form class="search-form">
-          <input type="text" name="search-query" id="search-input" class="search-input" required>
+          <input type="text" name="search-query" id="search-input" class="search-input" required placeholder="Search a city" aria-label="Search a city for weather details">
           <button id="search-btn" class="search-btn" type="submit" aria-label="search">
             <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
           </button>
@@ -59,7 +59,7 @@
       </p>
     </section>
 
-    <section class="prediction" role="region" aria-label="weather-details">
+    <section class="prediction" aria-label="weather-details">
       <img src="/public/prediction.png" alt="">
       <div class="cloud">
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20.9855C4.53831 20.7267 1 17.0266 1 12.5C1 7.80558 4.80558 4 9.5 4C12.5433 4 15.2131 5.59939 16.7146 8.00348C20.2051 8.11671 23 10.982 23 14.5C23 17.9216 20.3562 20.7257 17 20.9811V21H9V20.9855Z"></path></svg>
@@ -84,7 +84,7 @@
       </div>
     </section>
 
-    <section class="forecast" role="region" aria-labelledby="weather-forecast">
+    <section class="forecast" aria-labelledby="weather-forecast">
       <div class="heading">
         <h2 class="subtitle" id="weather-forecast">Forecast</h2>
         <p>4 days</p>
@@ -96,7 +96,7 @@
       </figure>
     </section>
 
-    <section class="overview" role="region" aria-labelledby="weather-overview">
+    <section class="overview" aria-labelledby="weather-overview">
       <h2 class="subtitle" id="weather-overview">Overview</h2>
       <div class="row">
         <div class="wind overview-col">

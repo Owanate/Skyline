@@ -1,5 +1,4 @@
 $primary-font-color: #e3e3e3;
-$sec-font-color:  #94a3b8;
 $heading-color: #f7f7f7;
 $background-color: #113f67;
 $accent-color: #38598b;
@@ -147,7 +146,7 @@ body {
   padding: 0;
   svg { 
     width: map-get($font-size, "icon-small"); 
-    fill: $sec-font-color;
+    fill: $primary-font-color;
   }
 }
 .weather-icon {
@@ -165,7 +164,7 @@ body {
   display: flex;
   align-items: center;
   gap: .4em;
-  border-bottom: 1px solid $sec-font-color;
+  border-bottom: 1px solid $primary-font-color;
   padding: .5em 1.5em;
   span{
     font-size: map-get($font-size , "medium");
@@ -293,11 +292,11 @@ body {
   gap: 20px;
   svg{
     width: map-get($font-size , "xl");
-    fill: $sec-font-color;
+    fill: $primary-font-color;
   }
   span {
     font-size: map-get($font-size , "medium");
-    color: $sec-font-color;
+    color: $primary-font-color;
   }
   p {
     margin-block-start: .3em;

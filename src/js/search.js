@@ -8,7 +8,7 @@ displayDateTime(date, time);
 // Search Result
 document.addEventListener("DOMContentLoaded", () => {
   let query = localStorage.getItem("searchQuery");
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=$f930a8b2e71bc550aac09c0222dd9f2d`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=f930a8b2e71bc550aac09c0222dd9f2d`)
     .then((response) => response.json())
     .then((data) => {
       document.querySelector(".location").textContent = `${data.name}, ${data.sys.country}`;
