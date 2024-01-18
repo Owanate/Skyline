@@ -39,8 +39,11 @@ In this project, I learned:
 
 ### Useful Resources
 - Accessibility
-    - [Youtube Playlist](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
-    - [Google's Web Accessibility Course](https://www.udacity.com/course/web-accessibility--ud891) - This course helped me understand accessibility really well. It is a free course that should last about 2 weeks or less. It's a great resource if you want to know more about accessibility.
+  - [Youtube Playlist](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
+  - [Google's Web Accessibility Course](https://www.udacity.com/course/web-accessibility--ud891) - This course helped me understand accessibility really well. It is a free course that should last about 2 weeks or less. It's a great resource if you want to know more about accessibility.
+- SASS
+  - [SASS Guidelines](https://sass-guidelin.es/)
+  - [SASS Boilerplate](https://github.com/KittyGiraudel/sass-boilerplate)
 
 ### Setup 
 This project is built using Vite, to run this project locally using npm 
