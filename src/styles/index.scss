@@ -6,8 +6,8 @@ $font-family: 'Roboto', sans-serif;
 $border-radius: 10px;
 
 $font-size: (
-  'small': .7rem,
-  'medium': .9rem,
+  'small': 0.7rem,
+  'medium': 0.9rem,
   'large': 1.1rem,
   'icon-small': 1.3rem,
   'icon-medium': 1.5rem,
@@ -76,7 +76,7 @@ body {
 }
 .wrapper {
   @extend %container;
-  padding-block: .7em;
+  padding-block: 0.7em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,7 +86,7 @@ body {
   font-weight: 700;
   color: $heading-color;
   display: flex;
-  gap: .3em;
+  gap: 0.3em;
   align-items: center;
   svg {
     width: 1.9rem;
@@ -96,7 +96,7 @@ body {
 .nav-toggler {
   @include button;
   border-radius: 5px;
-  padding: .5em .7em;
+  padding: 0.5em 0.7em;
 }
 .navbar, .picture {
   display: none
@@ -107,7 +107,7 @@ body {
   position: absolute;
   top: 3em;
   width: 90%;
-  padding: .7em 1em;
+  padding: 0.7em 1em;
   border-radius: $border-radius;
 }
 .search-form {
@@ -116,11 +116,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .9em .6em;
+  padding: 0.9em 0.6em;
   background-color: $primary-font-color;
   border-radius: $border-radius;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-  margin-block: .3em;
+  margin-block: 0.3em;
 }
 .search-input {
   border: none;
@@ -131,7 +131,7 @@ body {
 .search-btn {
   @include button;
   border-radius: 50%;
-  padding: .5em;
+  padding: 0.5em;
 }
 
 .main {
@@ -159,7 +159,7 @@ body {
   font-weight: 400;
   display: flex;
   align-items: flex-start;
-  padding-inline: .5em;
+  padding-inline: 0.5em;
   sup {
     font-size: map-get($font-size , 'xl');
   }
@@ -167,9 +167,9 @@ body {
 .description {
   display: flex;
   align-items: center;
-  gap: .4em;
+  gap: 0.4em;
   border-bottom: 1px solid $primary-font-color;
-  padding: .5em 1.5em;
+  padding: 0.5em 1.5em;
   span{
     font-size: map-get($font-size , 'medium');
     font-weight: 500;
@@ -177,10 +177,10 @@ body {
   }
 }
 .location , .date{
-  padding: .5em 1.5em;
+  padding: 0.5em 1.5em;
   display: flex;
   align-items: center;
-  gap: .4em;
+  gap: 0.4em;
   span{
     font-size: map-get($font-size , 'medium');
     font-weight: 500;
@@ -211,18 +211,18 @@ body {
   top: 1.1em;
   left: 10%;
   display: flex;
-  gap: .5em;
+  gap: 0.5em;
   align-items: center;
   svg {
     fill: $background-color;
     width: map-get($font-size , 'xl');
     background-color: $primary-font-color;
     border-radius: 50%;
-    padding: .3em;
+    padding: 0.3em;
   }
   p {
     font-size: map-get($font-size , 'medium');
-    margin-block-end: .1em;
+    margin-block-end: 0.1em;
     font-weight: 600;
   }
   span {
@@ -236,18 +236,18 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: .7em;
+  gap: 0.7em;
   text-align: center;
   div {
-    padding: .5em;
+    padding: 0.5em;
     border-radius: $border-radius;
   }
   p {
-    font-size: .6rem
+    font-size: 0.6rem
   }
   .deg {
     font-size: map-get($font-size , 'medium');
-    padding-block-start: .4em;
+    padding-block-start: 0.4em;
     font-weight: 600;
   }
 }
@@ -269,11 +269,11 @@ body {
 .heading {
   display: flex;
   justify-content: space-between;
-  padding-block-end: .5em;
+  padding-block-end: 0.5em;
   align-items: center;
   p {
     @extend %toggler;
-    padding: .5em .7em;
+    padding: 0.5em 0.7em;
   }
 }
 .subtitle { 
@@ -285,7 +285,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-block-end: .7em;
+  margin-block-end: 0.7em;
   img {
     width: 4em
   }
@@ -299,14 +299,14 @@ body {
 .overview {
   @include background();
   .subtitle {
-    margin-block-end: .5em;
+    margin-block-end: 0.5em;
   }
 }
 .overview-col {
   background-color: $background-color;
   border-radius: $border-radius;
   padding: 1em 1.5em;
-  margin-block-end: .7em;
+  margin-block-end: 0.7em;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -319,7 +319,7 @@ body {
     color: $primary-font-color;
   }
   p {
-    margin-block-start: .3em;
+    margin-block-start: 0.3em;
     font-size: map-get($font-size , 'icon-small');
     font-weight: 500;
   }
@@ -328,7 +328,7 @@ footer {
   @extend %toggler;
   @extend %container;
   margin-block: 2em;
-  padding-block:1em;
+  padding-block: 1em;
   border-radius: $border-radius;
   text-align: center;
 }
@@ -343,7 +343,7 @@ a {
   .navbar {
     display: flex;
     align-items: center;
-    gap: .7em;
+    gap: 0.7em;
   }
   .nav-toggler {display: none;}
   .search-form {
@@ -432,7 +432,7 @@ a {
     }
     figcaption {
       text-align: center;
-      margin-block-start: .5em;
+      margin-block-start: 0.5em;
       font-size: map-get($font-size, 'large');
       color: $heading-color;
       font-weight: 600;
