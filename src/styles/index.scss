@@ -2,7 +2,7 @@ $primary-font-color: rgb(227, 227, 227);
 $heading-color: rgb(247, 247, 247);
 $background-color: rgb(17, 63, 103);
 $accent-color: rgb(56, 89, 139);
-$font-family: 'Roboto', sans-serif;
+$font-family: ('Roboto', sans-serif);
 $border-radius: 10px;
 
 $font-size: (
@@ -132,6 +132,9 @@ body {
   @include button;
   border-radius: 50%;
   padding: 0.5em;
+  &:focus {
+    outline: 5px solid black;
+  }
 }
 
 .main {
@@ -337,6 +340,9 @@ address {
 }
 a { 
   color:$primary-font-color; 
+  &:focus {
+    outline: 5px solid black;
+  }
 }
 
 @media screen and (min-width: 600px) {
