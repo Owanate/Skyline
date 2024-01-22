@@ -5,20 +5,20 @@ $font-family: 'Roboto', sans-serif;
 $border-radius: 10px;
 
 $font-size: (
-  "small": .7rem,
-  "medium": .9rem,
-  "large": 1.1rem,
-  "icon-small": 1.3rem,
-  "icon-medium": 1.5rem,
-  "xl": 2rem,
-  "xxl": 3rem,
+  'small': 0.7rem,
+  'medium': 0.9rem,
+  'large': 1.1rem,
+  'icon-small': 1.3rem,
+  'icon-medium': 1.5rem,
+  'xl': 2rem,
+  'xxl': 3rem,
 );
 
 @mixin background() {
-    background: rgba( 255, 255, 255, 0.35 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10px );
-    -webkit-backdrop-filter: blur( 12.5px );
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(12.5px);
     border-radius: $border-radius;
 }
 
@@ -29,7 +29,7 @@ $font-size: (
 }
 
 body {
-    background: url("../../public/background.jpg") center center/cover no-repeat;
+    background: url('../../public/background.jpg') center center/cover no-repeat;
     background-blend-mode: darken;
     color: $primary-font-color;
     font-family: $font-family;
@@ -50,22 +50,24 @@ body {
 }
 .header {
     border-bottom: 3px solid $accent-color;
-    padding: 1em .5em;
+    padding: 1em 0.5em;
     text-align: end;
     display: flex;
     gap: 6px;
     justify-content: flex-end;
     p {
        border: 2px solid $accent-color; 
-       padding: .3em .5em;
+       padding: 0.3em 0.5em;
        border-radius: $border-radius;
        display: flex;
        align-items: center;
     }
-    span {font-size: map-get($font-size, "medium");}
+    span {
+        font-size: map-get($font-size, 'medium');
+    }
     svg {
-        width: map-get($font-size, "icon-small");
-        padding-inline-end: .2em;
+        width: map-get($font-size, 'icon-small');
+        padding-inline-end: 0.2em;
         fill: $primary-font-color;
         font-weight: 600;
     }
@@ -80,9 +82,15 @@ body {
     margin-block-start: 1em;
     font-weight: 500;
 }
-.temperature {font-size: map-get($font-size, "xxl");}
-.main {font-size: map-get($font-size, "icon-medium");}
-.description {text-transform: capitalize;}
+.temperature {
+    font-size: map-get($font-size, 'xxl');
+}
+.main {
+    font-size: map-get($font-size, 'icon-medium');
+}
+.description {
+    text-transform: capitalize;
+}
 
 .highlight {
     display: flex;
@@ -92,31 +100,30 @@ body {
     padding: 1em;
 }
 .highlight-row {
-    // @include background();
     border: 3px solid $accent-color;
-    padding: .7em;
+    padding: 0.7em;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     border-radius: $border-radius;
     p{
-        font-size: map-get($font-size, "large");
+        font-size: map-get($font-size, 'large');
         font-weight: 500;
     }
     svg{
         fill: $background-color;
-        width: map-get($font-size, "icon-medium");
+        width: map-get($font-size, 'icon-medium');
     }
 }
 .subtitle {
-    font-size: map-get($font-size, "medium");
+    font-size: map-get($font-size, 'medium');
 }
 
 small {
     display: block;
-    margin: .3em 1em;
-    font-size: map-get($font-size, "medium");
+    margin: 0.3em 1em;
+    font-size: map-get($font-size, 'medium');
     font-weight: 600;
     a {
         color: $primary-font-color;
@@ -125,20 +132,26 @@ small {
     }
     svg {
         fill: $primary-font-color;
-        width: map-get($font-size, "icon-medium");
+        width: map-get($font-size, 'icon-medium');
     }
 }
 
 @media screen and (min-width: 600px) {
     .header {
-        p {font-size: map-get($font-size, "large");}
-        i {font-size: map-get($font-size, "icon-small");}
+        p {
+            font-size: map-get($font-size, 'large');
+        }
+        i {
+            font-size: map-get($font-size, 'icon-small');
+        }
     }
     .highlight-row {
-        i {font-size: map-get($font-size, "icon-medium");}
+        i {
+            font-size: map-get($font-size, 'icon-medium');
+        }
     }
     small {
         margin: 1em;
-        font-size: map-get($font-size, "icon-small");
+        font-size: map-get($font-size, 'icon-small');
     }
 }
