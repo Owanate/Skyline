@@ -133,7 +133,7 @@ body {
   border-radius: 50%;
   padding: 0.5em;
   &:focus {
-    outline: 5px solid black;
+    outline: 5px solid rgb(0, 0, 0);
   }
 }
 
@@ -202,7 +202,7 @@ body {
 // prediction
 .prediction {
   position: relative;
-  background: black;
+  background: rgb(0, 0, 0);
   border-radius: $border-radius;
   img {
     @include image-width();
@@ -341,7 +341,7 @@ address {
 a { 
   color:$primary-font-color; 
   &:focus {
-    outline: 5px solid black;
+    outline: 5px solid rgb(0, 0, 0);
   }
 }
 
